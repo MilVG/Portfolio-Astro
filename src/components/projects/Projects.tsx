@@ -12,7 +12,6 @@ export default function Projects() {
   const container = useRef<HTMLDivElement>(null)
   const container_root = useRef<HTMLDivElement>(null)
   const setRefDivs = useDivRefsStore((state) => state.setDivRef)
-  const sectionsDivRef = useDivRefsStore((state) => state.divRefs)
 
 
 
