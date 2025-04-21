@@ -1,9 +1,6 @@
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 
 const Card = () => {
-  // w-1/2 max-sm:w-[95%] sm:w-[80%] md:w-4/5 md:h-3/5 lg:w-3/4 xl:w-3/5 
-  // 2xl:w-1/2 h-1/2 max-sm:h-3/4
-  // sm:bg-[url('/pplanets.gif')] max-sm:bg-[url('/sastronauta.gif')]
   return (
     <div
       className="
