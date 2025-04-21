@@ -34,11 +34,11 @@ export default function Projects() {
       },
       onStart: () => {
         ScrollTrigger.getById("navigation")?.refresh()
-        // ScrollTrigger.getById("model3d")?.refresh()
+        ScrollTrigger.getById("model3d")?.refresh()
       },
       onComplete: () => {
         ScrollTrigger.getById("navigation")?.refresh()
-        // ScrollTrigger.getById("model3d")?.refresh()
+        ScrollTrigger.getById("model3d")?.refresh()
       }
     })
     newtimeline.to(sections, {
