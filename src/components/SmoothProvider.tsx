@@ -3,7 +3,6 @@ import { useEffect, useLayoutEffect, useRef, type ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import Lenis from "lenis";
-import { useGSAP } from "@gsap/react";
 import { useDivRefsStore } from "@store/store-sections";
 import { useTimelineRoot } from "@store/store-timeline-root";
 import { useTimelineStore } from "@store/store-timeline-scrollTrigger";
@@ -39,17 +38,15 @@ export const SmoothProvider = ({ children }: SmoothProviderProps) => {
   }, [triggerModel3d]);
 
   useLayoutEffect(() => {
-      ScrollTrigger.normalizeScroll(true)
+    ScrollTrigger.normalizeScroll(true)
     if (!sectionsDivRef['Skills']?.current) return
     const SkillRefElement = sectionsDivRef['Skills'].current!
     if (!smothProviderRef.current) return
-    // gsap.registerPlugin(ScrollTrigger)
     const timelineroot = gsap.timeline({
       scrollTrigger: {
         trigger: smothProviderRef.current,
         id: "TriggerSmothProvider",
         endTrigger: SkillRefElement,
-        markers: true,
       },
     })
 
