@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { TimelineLogo } from "./elements/TimelineLogo";
 import { useDivRefsStore } from "@store/store-sections";
-import { div } from "three/src/nodes/TSL.js";
 
 export default function Experience() {
   const sectionExperience = useRef<HTMLDivElement>(null);
