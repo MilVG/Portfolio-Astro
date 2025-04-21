@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+.hidden_overflow-project{
+  overflow: hidden;
+}
 .label_01,
 .label_02,
 .label_03,
