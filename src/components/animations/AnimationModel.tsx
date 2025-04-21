@@ -9,7 +9,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import { useGSAP } from "@gsap/react";
 import { ArrayAnimations } from "@data/animations";
 import { useTimelineStore } from "@store/store-timeline-scrollTrigger";
-import { useTimelineNavigation } from "@store/store-timeline-havigation";
 import { useDivRefsStore } from "@store/store-sections";
 
 interface AnimationWrapperProps {
@@ -33,7 +32,6 @@ export const AnimationModel = ({ children, controlsRef }: AnimationWrapperProps)
   const divrefheight = sectionsDivRef['divrefheight']
 
   useGSAP(() => {
-    // gsap.registerPlugin(ScrollTrigger)
     if (!modelRef) return
     controlsRef.current?.target.set(0, 0, 0);
     controlsRef.current?.update();
