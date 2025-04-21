@@ -1,11 +1,9 @@
-import { useEffect, useLayoutEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import Lenis from "lenis";
 import Card from "./elementsProjects/Card";
 import { useDivRefsStore } from "@store/store-sections";
-import { useTimelineProjectStore } from "@store/store-timeline-projects";
 
 
 export default function Projects() {
@@ -14,12 +12,10 @@ export default function Projects() {
   const container = useRef<HTMLDivElement>(null)
   const container_root = useRef<HTMLDivElement>(null)
   const setRefDivs = useDivRefsStore((state) => state.setDivRef)
-  const setTimelineProject = useTimelineProjectStore((state) => state.setTimeline)
   const sectionsDivRef = useDivRefsStore((state) => state.divRefs)
 
 
 
-  const aboutRef = sectionsDivRef['About-Me']
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     const sections = gsap.utils.toArray(".panel")
@@ -60,7 +56,7 @@ export default function Projects() {
   return (
     <div
       className="flex flex-row justify-end items-center max-xl:justify-start
-      w-full h-screen bg-sky-300 overflow-x-hidden"
+      w-full h-screen overflow-x-hidden"
       ref={container_root}
     >
       {/* <div className="w-full flex flex-row justify-center items-center"> */}
@@ -69,7 +65,7 @@ export default function Projects() {
       {/* </div> */}
       <div
         id="Projects"
-        className="w-[60vw] [80vh]   xl:h-[68vh] 2xl:h-[60vh]  max-xl:w-full flex flex-col justify-center bg-green-200"
+        className="w-[60vw] [80vh]   xl:h-[68vh] 2xl:h-[60vh]  max-xl:w-full flex flex-col justify-center"
         ref={container}
       >
         <section
