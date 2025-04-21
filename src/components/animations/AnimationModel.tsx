@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { useThree } from "@react-three/fiber";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { OrbitControls as ThreeOrbitControls } from "three-stdlib";
 import { useModelStore } from "@store/store";
 import { useLabelsStore } from "@store/store_Labels_Html";
