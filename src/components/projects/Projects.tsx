@@ -25,7 +25,6 @@ export default function Projects() {
         scrub: true,
         pin: true,
         anticipatePin: 1,
-        markers: true,
         id: "horizontalsctoll",
       },
       onStart: () => {
