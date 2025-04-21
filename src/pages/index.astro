@@ -1,0 +1,24 @@
+---
+import "../styles/global.css"
+import Layout from "../layouts/Layout.astro"
+import Header from "../components/head/Header.astro"
+import About from "@components/about/About"
+import Experience from "@components/experience/Experience"
+import SkillsScene from "@components/skills/SkillsScene"
+import Projects from "@components/projects/Projects"
+import { Test } from "@components/Test"
+import { TestEncapsulation } from "@components/TestEncapsulation" 
+import { SmoothProvider } from "@components/SmoothProvider"
+---
+
+<Layout>
+  <TestEncapsulation>
+  <SmoothProvider client:only>
+    <!-- <Header/> -->
+    <About client:idle/>
+    <Experience client:idle/>
+    <SkillsScene client:idle/>
+    <!-- <Projects client:idle/> -->
+  </SmoothProvider>
+  </TestEncapsulation>
+</Layout>
