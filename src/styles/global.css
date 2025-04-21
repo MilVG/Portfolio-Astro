@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+.label_01,
+.label_02,
+.label_03,
+.label_04,
+.label_05 {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Stylos para el label 1 */
+.label_01 {
+  top: 400px;
+  left: 400px;
+}
+
+.label_01 h1 {
+  text-decoration: underline;
+  font-size: 10rem;
+}
+
+.label_01 p {
+  position: relative;
+  top: -50px;
+  font-size: 1.2rem;
+}
+
+/* Stylos para el label 2*/
+.label_02 {
+  top: 300px;
+  left: 400px;
+}
+
+.label_02 h1 {
+  text-decoration: underline;
+  font-size: 14rem;
+}
+
+.label_02 p {
+  position: relative;
+  top: -70px;
+  font-size: 1.5rem;
+}
+
+/* Stylos para el label 3*/
+.label_03 {
+  top: 300px;
+  left: 300px;
+}
+
+.label_03 h1 {
+  text-decoration: underline;
+  font-size: 14rem;
+}
+
+.label_03 p {
+  position: relative;
+  top: -70px;
+  font-size: 1.5rem;
+}
+
+/* Stylos para el label 4*/
+.label_04 {
+  top: 150px;
+  left: 100px;
+}
+
+.label_04 h1 {
+  text-decoration: underline;
+  font-size: 14rem;
+}
+
+.label_04 p {
+  position: relative;
+  top: -70px;
+  font-size: 1.5rem;
+}
+
+/* Stylos para el label 5*/
+.label_05 {
+  bottom: 500px;
+  left: 200px;
+}
+
+.label_05 h1 {
+  text-decoration: underline;
+  font-size: 14rem;
+}
+
+.label_05 p {
+  position: relative;
+  top: -70px;
+  font-size: 1.5rem;
+}
+
+/* media querys head Banner background*/
+
+  @media (width <= 640px) {
+  .navigation_links {
+    background-color: slategray;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    z-index: 60;
+  }
+
+  .navigationactive{
+    display:flex;
+  }
+
+  .label_01 h1,
+  .label_02 h1,
+  .label_03 h1,
+  .label_04 h1,
+  .label_05 h1 {
+    font-size: 3rem;
+  }
+
+  .label_01 p,
+  .label_02 p,
+  .label_03 p,
+  .label_04 p,
+  .label_05 p {
+    font-size: 10px;
+    top: 0;
+  }
+
+  .label_01,
+  .label_02,
+  .label_03,
+  .label_04,
+  .label_05 {
+    left: 80px;
+  }
+
+
+}
+
+@media (768px <=width <=900px) {
+
+  .label_01 h1,
+  .label_02 h1,
+  .label_03 h1,
+  .label_04 h1,
+  .label_05 h1 {
+    font-size: 8rem;
+  }
+
+  .label_01 p,
+  .label_02 p,
+  .label_03 p,
+  .label_04 p,
+  .label_05 p {
+    font-size: 1rem;
+    top: 0;
+  }
+
+  .label_01,
+  .label_02,
+  .label_03,
+  .label_04,
+  .label_05 {
+    left: 150px;
+  }
+
+}
+
+@media (901px <=width <=1200px) {
+
+  .label_01 h1,
+  .label_02 h1,
+  .label_03 h1,
+  .label_04 h1,
+  .label_05 h1 {
+    font-size: 8rem;
+  }
+
+  .label_01 p,
+  .label_02 p,
+  .label_03 p,
+  .label_04 p,
+  .label_05 p {
+    font-size: 1rem;
+    top: 0;
+  }
+
+}
+
+@media (1201px <=width <=1300px) {
+
+  .label_01 h1,
+  .label_02 h1,
+  .label_03 h1,
+  .label_04 h1,
+  .label_05 h1 {
+    font-size: 10rem;
+  }
+
+  .label_01 p,
+  .label_02 p,
+  .label_03 p,
+  .label_04 p,
+  .label_05 p {
+    font-size: 1.5rem;
+    top: 0;
+  }
+
+}
+
