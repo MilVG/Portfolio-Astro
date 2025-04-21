@@ -20,7 +20,6 @@
     "astro": "^5.6.1",
     "gsap": "^3.12.7",
     "lenis": "^1.2.3",
-    "locomotive-scroll": "^5.0.0-beta.21",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.3",
