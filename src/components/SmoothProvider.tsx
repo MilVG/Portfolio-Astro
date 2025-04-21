@@ -22,11 +22,13 @@ export const SmoothProvider = ({ children }: SmoothProviderProps) => {
   const triggerModel3d = ScrollTrigger.getById("model3d")
 
   useEffect(() => {
-    const lenis = new Lenis()
+    const lenis = new Lenis({
+      duration: 3,
+    })
     lenis.on('scroll', ScrollTrigger.update)
 
     gsap.ticker.add((time) => {
-      lenis.raf(time * 2000)
+      lenis.raf(time * 1000)
     })
 
     gsap.ticker.lagSmoothing(0)
@@ -38,7 +40,6 @@ export const SmoothProvider = ({ children }: SmoothProviderProps) => {
   }, [triggerModel3d]);
 
   useLayoutEffect(() => {
-    ScrollTrigger.normalizeScroll(true)
     if (!sectionsDivRef['Skills']?.current) return
     const SkillRefElement = sectionsDivRef['Skills'].current!
     if (!smothProviderRef.current) return

@@ -54,7 +54,8 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
         end: "bottom bottom",
         pinSpacing: false,
         pin: true,
-        scrub: 2,
+        anticipatePin: 1,
+        scrub: 3,
         toggleClass: "stylenav",
         id: "navigation"
       },
