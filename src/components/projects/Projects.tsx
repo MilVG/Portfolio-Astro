@@ -16,20 +16,17 @@ export default function Projects() {
 
 
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
     const sections = gsap.utils.toArray(".panel")
-
-    if (!horizotalPanelsRef.current || sections.length === 0 || !container_root.current) return
-    const totalWidth = horizotalPanelsRef.current?.offsetWidth
+    if (sections.length === 0 || !container_root.current) return
     const newtimeline = gsap.timeline({
       scrollTrigger: {
         trigger: container_root.current,
         start: `top top`,
-        end: "bottom+=" + totalWidth + " " + "bottom",
         scrub: true,
-        pin: container_root.current,
-        invalidateOnRefresh: true,
-        id: "horizontalsctoll"
+        pin: true,
+        anticipatePin: 1,
+        markers: true,
+        id: "horizontalsctoll",
       },
       onStart: () => {
         ScrollTrigger.getById("navigation")?.refresh()
@@ -43,6 +40,7 @@ export default function Projects() {
     newtimeline.to(sections, {
       xPercent: -(100 * (sections.length - 1)),
       ease: "none",
+      force3D: true,
 
     })
   }, { dependencies: [horizotalPanelsRef], scope: container })
@@ -54,8 +52,7 @@ export default function Projects() {
   }, [container, setRefDivs])
   return (
     <div
-      className="flex flex-row justify-end items-center max-xl:justify-start
-      w-full h-screen overflow-x-hidden"
+      className="flex flex-row justify-center items-center w-full min-h-screen bg-blue-300 hidden_overflow-project"
       ref={container_root}
     >
       {/* <div className="w-full flex flex-row justify-center items-center"> */}
@@ -64,13 +61,12 @@ export default function Projects() {
       {/* </div> */}
       <div
         id="Projects"
-        className="w-[60vw] [80vh]   xl:h-[68vh] 2xl:h-[60vh]  max-xl:w-full flex flex-col justify-center"
+        className="h-[70%] w-[90%] flex flex-col justify-center bg-green-200"
         ref={container}
       >
         <section
           ref={horizotalPanelsRef}
-          className="relative h-[80vh] max-xl:w-[500vw] w-[200vw] flex flex-nowrap 
-          items-center sm:gap-2"
+          className=" flex"
         >
           <Card />
           <Card />

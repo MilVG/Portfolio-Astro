@@ -4,11 +4,8 @@ const Card = () => {
   return (
     <div
       className="
-      relative xl:ml-16 max-sm:ml-4
-          max-lg:w-[60vw] max-md:w-[80vw] max-sm:[100vw]
-          w-[30vw] h-5/6 rounded-3xl panel 
-          backdrop-blur-[70px] backdrop-saturate-[90%] bg-slate-300 
-          bg-opacity-30 border border-opacity-20 border-[#dbdbdb]
+          w-[600px] h-[500px] shrink-0
+          rounded-3xl panel bg-slate-300 border border-opacity-20 border-[#dbdbdb]
           flex flex-col justify-center items-center"
     >
       <div className="w-[90%] h-[95%] flex flex-col justify-start gap-4 text-white">
