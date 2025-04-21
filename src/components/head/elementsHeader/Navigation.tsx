@@ -58,6 +58,10 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
         toggleClass: "stylenav",
         id: "navigation"
       },
+      onStart: () => {
+        ScrollTrigger.getById("horizontalsctoll")?.refresh()
+      }
+
     })
     setTimelineNav(newrstimeline)
   }, { dependencies: [navsection, sectionsDivRef['Skills']] })
