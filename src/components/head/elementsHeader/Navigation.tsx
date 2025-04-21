@@ -5,9 +5,7 @@ import gsap from 'gsap'
 import { useDivRefsStore } from '@store/store-sections'
 import { useTimelineStore } from '@store/store-timeline-scrollTrigger'
 import { useTimelineProjectStore } from '@store/store-timeline-projects'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { useTimelineNavigation } from '@store/store-timeline-havigation'
-import { useTimelineRoot } from '@store/store-timeline-root'
 
 
 type RutesPage = {
@@ -35,12 +33,10 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
   const timelineProjectSection = useTimelineProjectStore((state) => state.timelineProjectsSection)
 
   const setTimelineNav = useTimelineNavigation((state) => state.setTimeline)
-  const timelineRoot = useTimelineRoot((state) => state.timelineRoot)
 
   const sectionsDivRef = useDivRefsStore((state) => state.divRefs)
   const navsection = useRef<HTMLDivElement>(null)
 
-  // if (!setVisible || !visible || !styleList) return
 
   const handleCloseMenu = () => {
     setVisible(false)
@@ -49,7 +45,6 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
   useGSAP(() => {
     if (!navsection.current || !sectionsDivRef['Skills']?.current) return
     const SkillRefElement = sectionsDivRef['Skills'].current!
-    // gsap.registerPlugin(ScrollTrigger)
     const newrstimeline = gsap.timeline()
     newrstimeline.to(navsection.current, {
       scrollTrigger: {
@@ -59,7 +54,7 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
         end: "bottom bottom",
         pinSpacing: false,
         pin: true,
-        scrub:2;
+        scrub: 2,
         toggleClass: "stylenav",
         id: "navigation"
       },
