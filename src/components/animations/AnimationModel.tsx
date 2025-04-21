@@ -43,8 +43,9 @@ export const AnimationModel = ({ children, controlsRef }: AnimationWrapperProps)
           return "bottom+=500%" + " " + "center"
         },
         endTrigger: divrefheight.current,
-        scrub: 3,
+        scrub: 2,
         pin: aboutRef.current,
+        anticipatePin: 2,
         id: "model3d",
       },
       onStart: () => {
