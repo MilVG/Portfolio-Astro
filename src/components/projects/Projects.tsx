@@ -51,21 +51,21 @@ export default function Projects() {
   }, [container, setRefDivs])
   return (
     <div
-      className="flex flex-row justify-center items-center w-full min-h-screen bg-blue-300 hidden_overflow-project"
+      className="flex flex-col justify-around items-center w-full min-h-screen hidden_overflow-project"
       ref={container_root}
     >
-      {/* <div className="w-full flex flex-row justify-center items-center"> */}
-      {/*   <h1 className="w-[90%] text-white text-4xl  */}
-      {/*     font-bold text-center border-b-2 border-t-2 border-dashed">Projects</h1> */}
-      {/* </div> */}
+      <div className="w-full flex flex-row justify-center items-center">
+        <h1 className="w-[90%] text-white text-4xl 
+          font-bold text-center border-b-2 border-t-2 border-dashed">Projects</h1>
+      </div>
       <div
         id="Projects"
-        className="h-[70%] w-[90%] flex flex-col justify-center bg-green-200"
+        className="h-[70%] w-[90%] flex flex-col justify-center"
         ref={container}
       >
         <section
           ref={horizotalPanelsRef}
-          className=" flex"
+          className=" flex gap-2"
         >
           <Card />
           <Card />
