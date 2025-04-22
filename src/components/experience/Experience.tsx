@@ -44,11 +44,11 @@ export default function Experience() {
   return (
 
     <div ref={sectionExperience} id="testrefpinend"
-      className="relative w-full h-[240vh] max-sm:h-[150vh]">
-      {/*<div className="absolute w-full flex flex-row justify-center items-center">
+      className="flex flex-col justify-around items-center w-full h-[240vh] max-sm:h-[150vh]">
+      <div className="w-full flex flex-row justify-center items-center">
         <h1 className="w-[90%] text-white text-4xl 
           font-bold text-center border-b-2 border-t-2 border-dashed">Experience</h1>
-      </div>*/}
+      </div>
       <div id="Experience" className="relative w-full h-full">
         <div>
           <div
