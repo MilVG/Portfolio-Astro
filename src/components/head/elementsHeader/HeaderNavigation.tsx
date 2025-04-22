@@ -7,7 +7,10 @@ export default function HeaderNavigation() {
 
   const [visible, setVisible] = useState(false)
   const handleShowPanel = () => {
-    setVisible(true)
+
+    if (window.innerWidth <= 640) {
+      setVisible(true)
+    }
   }
 
   const stylenavigation = "stylenav navigation_links flex flex-row justify-start items-center lg:gap-4 lg:left-8 lg:justify-center 2xl:justify-start sm:gap-2 w-4/6 relative  sm:left-0 sm:w-full sm:justify-center sm:uppercase xl:left-0 max-sm:gap-4"
@@ -42,7 +45,9 @@ export default function HeaderNavigation() {
         styleButton={styleNavButton}
       />
 
-      <div className="w-8 h-8 absolute right-4 text-white cursor-pointer top-10 sm:invisible"><Bars4Icon onClick={handleShowPanel} /></div>
+      <div className="w-8 h-8 absolute right-4 text-white cursor-pointer top-10 sm:invisible">
+        <Bars4Icon onClick={handleShowPanel} />
+      </div>
       <ButtonContact
         className="max-sm:invisible"
       />

@@ -1,4 +1,4 @@
-import { useRef, type Dispatch, type SetStateAction } from 'react'
+import { useEffect, useRef, type Dispatch, type SetStateAction } from 'react'
 import { XMarkIcon } from "@heroicons/react/24/outline"
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -6,6 +6,7 @@ import { useDivRefsStore } from '@store/store-sections'
 import { useTimelineStore } from '@store/store-timeline-scrollTrigger'
 import { useTimelineProjectStore } from '@store/store-timeline-projects'
 import { useTimelineNavigation } from '@store/store-timeline-havigation'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 
 type RutesPage = {
@@ -41,16 +42,26 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
   const handleCloseMenu = () => {
     setVisible(false)
   }
+  useEffect(() => {
+    if (window.innerWidth <= 640) {
+      ScrollTrigger.getById("navigation")?.disable()
+    }
+    else {
 
+      ScrollTrigger.getById("navigation")?.enable()
+      ScrollTrigger.getById("navigation")?.refresh()
+
+    }
+  })
   useGSAP(() => {
-    if (!navsection.current || !sectionsDivRef['Skills']?.current) return
-    const SkillRefElement = sectionsDivRef['Skills'].current!
+    if (!navsection.current || !sectionsDivRef['Projects']?.current) return
+    const projectRefElement = sectionsDivRef['Projects'].current!
     const newrstimeline = gsap.timeline()
     newrstimeline.to(navsection.current, {
       scrollTrigger: {
         trigger: navsection.current,
         start: "top top",
-        endTrigger: SkillRefElement,
+        endTrigger: projectRefElement,
         end: "bottom bottom",
         pinSpacing: false,
         pin: true,
@@ -71,7 +82,7 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
 
     })
     setTimelineNav(newrstimeline)
-  }, { dependencies: [navsection, sectionsDivRef['Skills']] })
+  }, { dependencies: [navsection, sectionsDivRef['Projects']] })
 
   const handleToSection = (name: string) => {
 
@@ -173,7 +184,7 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
     <div
       ref={navsection}
       id={id}
-      className={` ${visible === true ? 'max-sm:visible navigationactive' : 'max-sm:invisible'} ${style} `}
+      className={` ${visible === true ? 'navigationactive' : ''} ${style}`}
     >
       <div className={` w-full flex flex-row justify-end mt-4 p-4 cursor-pointer sm:invisible sm:absolute`}>
         <XMarkIcon className='w-8 h-8' onClick={handleCloseMenu} />
