@@ -45,10 +45,10 @@ export default function Projects() {
   }, { dependencies: [horizotalPanelsRef], scope: container })
 
   useEffect(() => {
-    if (container.current) {
-      setRefDivs("Projects", container)
+    if (container_root.current) {
+      setRefDivs("Projects", container_root)
     }
-  }, [container, setRefDivs])
+  }, [container_root, setRefDivs])
   return (
     <div
       className="flex flex-col justify-around items-center w-full min-h-screen hidden_overflow-project"
