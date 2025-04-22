@@ -57,7 +57,14 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
         anticipatePin: 1,
         scrub: 3,
         toggleClass: "stylenav",
-        id: "navigation"
+        markers: true,
+        id: "navigation",
+        onEnter: () => {
+          navsection.current?.classList.add("bg-white/30", "backdrop-blur-sm", "rounded-3xl")
+        },
+        onLeaveBack: () => {
+          navsection.current?.classList.remove("bg-white/30", "backdrop-blur-sm")
+        },
       },
       onStart: () => {
         ScrollTrigger.getById("horizontalsctoll")?.refresh()
@@ -167,12 +174,11 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
     <div
       ref={navsection}
       id={id}
-      className={` ${visible === true ? 'max-sm:visible navigationactive' : 'max-sm:invisible'} ${style}`}
+      className={` ${visible === true ? 'max-sm:visible navigationactive' : 'max-sm:invisible'} ${style} `}
     >
       <div className={` w-full flex flex-row justify-end mt-4 p-4 cursor-pointer sm:invisible sm:absolute`}>
         <XMarkIcon className='w-8 h-8' onClick={handleCloseMenu} />
       </div>
-
       {pages.map(page => (
         <ul
           key={page.id}
