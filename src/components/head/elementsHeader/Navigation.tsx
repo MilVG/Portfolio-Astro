@@ -57,7 +57,6 @@ const Navigation = ({ id, visible, setVisible, style, styleList, styleButton }: 
         anticipatePin: 1,
         scrub: 3,
         toggleClass: "stylenav",
-        markers: true,
         id: "navigation",
         onEnter: () => {
           navsection.current?.classList.add("bg-white/30", "backdrop-blur-sm", "rounded-3xl")
