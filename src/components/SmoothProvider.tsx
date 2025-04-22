@@ -40,19 +40,19 @@ export const SmoothProvider = ({ children }: SmoothProviderProps) => {
   }, [triggerModel3d]);
 
   useLayoutEffect(() => {
-    if (!sectionsDivRef['Skills']?.current) return
-    const SkillRefElement = sectionsDivRef['Skills'].current!
+    if (!sectionsDivRef['Projects']?.current) return
+    const projectElement = sectionsDivRef['Projects'].current!
     if (!smothProviderRef.current) return
     const timelineroot = gsap.timeline({
       scrollTrigger: {
         trigger: smothProviderRef.current,
         id: "TriggerSmothProvider",
-        endTrigger: SkillRefElement,
+        endTrigger: projectElement,
       },
     })
 
     setTimelineRoot(timelineroot)
-  }, [timeabout, sectionsDivRef['Skills']])
+  }, [timeabout, sectionsDivRef['Projects']])
 
   return (
     <div ref={smothProviderRef}>
