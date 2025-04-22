@@ -4,7 +4,7 @@ const Card = () => {
   return (
     <div
       className="
-          w-[600px] h-[500px] shrink-0
+          w-[600px] max-sm:w-[350px] max-sm:h-[600px] h-[500px] shrink-0
           rounded-3xl panel bg-white/10 backdrop-blur-sm border border-opacity-20 border-[#dbdbdb]
           flex flex-col justify-center items-center"
     >
