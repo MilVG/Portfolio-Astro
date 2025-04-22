@@ -27,12 +27,12 @@ const About = () => {
   }, [divrefheight, setDivRef])
   return (
     <div id="About-Me" className="w-full h-screen overflow-x-hidden" ref={sectionHeadRef}>
-      <div ref={divrefheight} className="w-full h-screen">
-        {/* <div className="absolute left-3 w-[95%] border-b-2 border-t-2"> */}
-        {/*   <h1 className="ml-4 text-white text-4xl  */}
-        {/*     font-bold  ">About-Me</h1> */}
-        {/* </div> */}
-        <div className="w-full h-screen">
+      <div ref={divrefheight} className="w-full h-screen flex flex-col justify-around items-center">
+        <div className="w-full flex flex-row justify-center items-center">
+          <h1 className="w-[90%] text-white text-4xl 
+          font-bold text-center border-b-2 border-t-2 border-dashed">About</h1>
+        </div>
+        <div className="w-full h-full">
           <Canvas>
             <Camera />
             <ambientLight
