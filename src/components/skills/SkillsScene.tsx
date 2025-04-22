@@ -83,13 +83,13 @@ export default function SkillsScene() {
     }
   }, [skillSectionRef, setDivRef]);
   return (
-    <div className="w-full h-screen max-sm:h-[50vh]"
+    <div className="w-full flex flex-col justify-around items-center h-screen max-sm:h-[50vh]"
       ref={skillSectionRef}
     >
-      {/* <div className="absolute w-full flex flex-row justify-center items-center"> */}
-      {/*   <h1 className="w-[90%] text-white text-4xl  */}
-      {/*     font-bold text-center border-b-2 border-t-2 border-dashed">Skills</h1> */}
-      {/* </div> */}
+      <div className="w-full flex flex-row justify-center items-center">
+        <h1 className="w-[90%] text-white text-4xl 
+          font-bold text-center border-b-2 border-t-2 border-dashed">Skills</h1>
+      </div>
       <div
         id="Skills"
         className="w-full h-full"
