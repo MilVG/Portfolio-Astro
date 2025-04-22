@@ -5,7 +5,7 @@ const Card = () => {
     <div
       className="
           w-[600px] h-[500px] shrink-0
-          rounded-3xl panel bg-slate-300 border border-opacity-20 border-[#dbdbdb]
+          rounded-3xl panel bg-white/10 backdrop-blur-sm border border-opacity-20 border-[#dbdbdb]
           flex flex-col justify-center items-center"
     >
       <div className="w-[90%] h-[95%] flex flex-col justify-start gap-4 text-white">
